@@ -8,9 +8,9 @@ export const Countries = () => {
     fetch(api)
       .then((res) => res.json())
       .then((data) => setCountries(data))
-      .catch((err) => console.error(err));
+      .catch((err) => console.error('Error fetching data:', err));
   }, []);
-    
+
   return (
     <div
       style={{
@@ -18,12 +18,17 @@ export const Countries = () => {
         flexWrap: 'wrap',
         justifyContent: 'center',
         gap: '1em',
-              alignItems: 'center',
+        alignItems: 'center',
         textAlign: 'center',
       }}
     >
       {countries.map((country) => (
-        <Country name={country.name} flag={country.flag} abbr={country.abbr} key={country.abbr}/>
+        <Country
+          name={country.name}
+          flag={country.flag}
+          abbr={country.abbr}
+          key={country.abbr}
+        />
       ))}
     </div>
   );

@@ -3,7 +3,7 @@ import { Country } from './Country';
 
 export const Countries = () => {
   let [countries, setCountries] = useState([]);
-  let api = 'https://xcountries-backend.azurewebsites.net/all';
+  let api = 'https://xcountriesapi.onrender.com/all';
   useEffect(() => {
     fetch(api)
       .then((res) => res.json())
